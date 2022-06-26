@@ -18,10 +18,10 @@ function App() {
       .then((response) => {
         console.log(response);
         axios
-          .get(url)
+          .get(url + "/all")
           .then((response) => {
             console.log(response);
-            setChicken(response.data.name);
+            setChicken(response.data);
           })
           .catch((error) => {
             console.log(error);
@@ -39,7 +39,11 @@ function App() {
       <button>Hall Of Fame</button>
       <input onChange={handleInputChange}></input>
       <div>{chickenName}</div>
-      <div>{chicken}</div>
+      <div>
+        {chicken.map((a) => {
+          return <div>{a.name}</div>;
+        })}
+      </div>
     </div>
   );
 }
