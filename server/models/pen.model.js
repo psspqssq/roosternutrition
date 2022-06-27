@@ -4,6 +4,12 @@ module.exports = (mongoose) => {
     mongoose.Schema(
       {
         number: Number,
+        roosters: [
+          {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "rooster_record",
+          },
+        ],
       },
       { timestamps: true }
     )

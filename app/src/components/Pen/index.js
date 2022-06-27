@@ -1,10 +1,12 @@
 import React from "react";
 import Rooster from "../Rooster";
 
-const Pen = () => {
+const Pen = (props) => {
   return (
     <div>
-      <Rooster></Rooster>
+      <div>
+        {props.pen.number} {props.pen.name}
+      </div>
     </div>
   );
 };
